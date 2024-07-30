@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>house price prediction
+
+    </title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='index.css')}}">
+    <!--<link rel="stylesheet" href="index.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--section--nav-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">HPP</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+      <!--banner section-->
+      
+      <section>
+<div class="container-fluid" id="main"><br>
+    <h1 class="text-success"id="heading" style="text-align: center;">HOUSE PRICE PREDICTION</h1>
+    <br>
+    <br>
+    <div class="row col s12">
+        <form action="{{url_for('predict')}}" method="post">
+          <div class="row">
+            <div class="input-field col s4">
+                <label for="first_name"><b>Sqft's</b></label>
+                <br>
+              <input placeholder="sqft" name="sqft" id="first_name" type="text" class="validate" required="required">
+            </div>
+            <div class="input-field col s4">
+               <label for="last_name"><b>Bedrooms: </b></label>
+                <br>
+              <input id="last_name" name="bedrooms" placeholder="bedrooms"  type="text" class="validate" required="required">
+            </div>
+    
+            <div class="input-field col s4">
+                <label for="_name"><b>Baths:</b></label>
+                <br>
+              <input id="_name" name="Baths" placeholder="Baths" type="text" class="validate" required="required">
+            </div>
+    
+          </div><br>
+          <br>
+          <button type="submit" class="btn btn-primary  btn-lg btncontainer" style="height: 5rem;width: 15rem;border-radius: 25px;">Predict</button>
+        </form>
+        <br>
+        <br><b>
+        {{prediction_text}}</b>
+        
+        
+</div>
+</section>
+<section><footer style="background-color: #f8f9fa; padding: 20px 0; text-align: center; border-top: 1px solid #e7e7e7;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; justify-content: space-around;">
+    
+    <!-- Contact Information -->
+    <div style="flex: 1; min-width: 200px; margin: 10px;">
+      <h4>Contact Us</h4>
+      <p>Email: azeed2687@gmail.com</p>
+      <p>Phone: 7815942687</p>
+      <p>Address: Khammam</p>
+    </div>
+    
+    <!-- Quick Links -->
+    <div style="flex: 1; min-width: 200px; margin: 10px;">
+      <h4>Quick Links</h4>
+      <ul style="list-style-type: none; padding: 0;">
+        <li><a href="/about-us" style="text-decoration: none; color: #007bff;">About Us</a></li>
+        <li><a href="/services" style="text-decoration: none; color: #007bff;">Services</a></li>
+        <li><a href="/contact" style="text-decoration: none; color: #007bff;">Contact</a></li>
+        <li><a href="/faq" style="text-decoration: none; color: #007bff;">FAQ</a></li>
+      </ul>
+    </div>
+    
+    <!-- Social Media Icons -->
+    <div style="flex: 1; min-width: 200px; margin: 10px;">
+      <h4>Follow Us</h4>
+      <a href="https://www.facebook.com/azeedshaik.shaik" style="margin: 0 10px;"><i class="fab fa-facebook-f" style="font-size: 24px; color: #4267B2;"></i></a>
+      <a href="https://github.com/azeed7860" style="margin: 0 10px;"><i class="fab fa-github" style="font-size: 24px; color: #333;"></i></a>
+      <a href="https://www.linkedin.com/in/shaik-azeed-797470251" style="margin: 0 10px;"><i class="fab fa-linkedin-in" style="font-size: 24px; color: #0077b5;"></i></a>
+    </div>
+    
+    <!-- Newsletter Signup -->
+    <div style="flex: 1; min-width: 200px; margin: 10px;">
+      <h4>Newsletter</h4>
+      <p>Sign up for the latest updates</p>
+      <form>
+        <input type="email" placeholder="Your email" style="padding: 5px; margin-bottom: 10px; width: 100%;">
+        <button type="submit" style="padding: 5px 10px; background-color: #007bff; color: white; border: none; cursor: pointer;">Subscribe</button>
+      </form>
+    </div>
+    
+  </div>
+  
+  <!-- Legal Information -->
+  <div style="margin-top: 20px;">
+    <p style="margin: 0;">&copy; 2024 House Price Prediction. All Rights Reserved.</p>
+    <p style="margin: 0;">Designed By : azeedshaik</p>
+  </div>
+</footer>
+
+</section>
+<section>done by azeedshaik</section>
+</body>
+</html>
